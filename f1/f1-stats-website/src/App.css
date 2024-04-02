@@ -51,7 +51,7 @@ nav {
 
 nav ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
@@ -67,4 +67,70 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+.nav-link {
+  color: #fff; 
+  text-decoration: none; 
+  margin-right: 20px; 
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #ff0000; 
+}
+
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.red-box {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin-top: 40px;
+  height: 500px; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.button-container {
+  width: 40%; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container button {
+  margin-bottom: 20px; 
+  padding: 10px;
+  background-color: #960505;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 1s ease;
+  width: 100%;
+  margin-left: 20%;
+}
+
+.button-container button:hover {
+  box-shadow: 0 0 15px rgb(255, 0, 0);
+  transition: box-shadow 0.6s ease-in-out;
+}
+.image-container {
+  margin-left: 70%; /* Adjust margin as needed */
+  width: 90%; /* Adjust width of the image container */
+  border-radius: 10px; /* Add rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.image-container img {
+  width: 70%; /* Make the image fill the container */
+  height: 450px; /* Maintain aspect ratio */
+  display: block; /* Ensure the image behaves as a block element */
 }
