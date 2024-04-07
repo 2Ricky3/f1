@@ -59,7 +59,7 @@ const Home = () => {
       <h1>
         Welcome to <b>F1 Statistics Website</b>
       </h1>
-      <p>The best top 7 drivers of all time!</p>
+      <h3>The best Top 7 drivers of all time!</h3>
       <div className="red-box">
         <div className="button-container">
           {raceRanks.map((res) => (
@@ -82,6 +82,8 @@ const Home = () => {
                   text: "Race Points",
                 },
               },
+              width: 2000,
+              height: 2000,
             }}
             data={{
               labels,

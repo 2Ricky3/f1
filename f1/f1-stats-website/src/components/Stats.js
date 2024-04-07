@@ -43,7 +43,7 @@ const Stats = () => {
 
   return (
     <>
-      <h2>F1 Racer Stats</h2>
+      <h2>F1 Racer Comparison</h2>
       <div className="chartsContainer">
         <div className="chart1">
           <select onChange={(e) => setDropDownValOne(e.target.value)}>
@@ -73,7 +73,7 @@ const Stats = () => {
               }}
             />
           ) : (
-            <p>please select racer</p>
+            <p>Please select racer</p>
           )}
         </div>
         <div className="chart2">
@@ -110,7 +110,7 @@ const Stats = () => {
               }}
             />
           ) : (
-            <p>please select racer</p>
+            <p>Please select racer</p>
           )}
         </div>
       </div>
