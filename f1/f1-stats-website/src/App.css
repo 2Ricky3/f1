@@ -134,3 +134,19 @@ nav ul li a:hover {
   height: 450px; /* Maintain aspect ratio */
   display: block; /* Ensure the image behaves as a block element */
 }
+
+.chartsContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.chart1 {
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.chart2 {
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+}
