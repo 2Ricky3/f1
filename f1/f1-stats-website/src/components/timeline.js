@@ -1,33 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Timeline.css';
 
-function Timeline() {
-  const f1Events = [
-    { year: 1950, event: 'First Formula 1 World Championship race held in Silverstone, UK' },
-    { year: 1958, event: 'First Constructors\' Championship introduced' },
-    { year: 1978, event: 'First turbocharged car raced in Formula 1' },
-    { year: 1981, event: 'First carbon fiber monocoque introduced' },
-    { year: 1988, event: 'Ayrton Senna wins his first Formula 1 World Championship with McLaren' },
-    { year: 1992, event: 'Nigel Mansell becomes the first driver to win 9 races in a single season' },
-    { year: 1994, event: 'Tragic death of Ayrton Senna at San Marino Grand Prix' },
-    { year: 2000, event: 'Michael Schumacher wins his third World Championship with Ferrari' },
-    { year: 2014, event: 'Introduction of hybrid power units (V6 turbocharged engines)' },
-    { year: 2022, event: 'Lewis Hamilton wins his record-breaking 8th World Championship' }
-  ];
+const Timeline = () => {
+  const [pitStops, setPitStops] = useState([]);
+
+  useEffect(() => {
+    const fetchPitStops = async () => {
+      try {
+        const response = await axios.get(
+          "https://api-formula-1.p.rapidapi.com/pitstops",
+          {
+            params: { race: 50 }, // You can change the race number as needed
+            headers: {
+              "X-RapidAPI-Key": "aab88935aemshbf9715733d12537p1d684cjsn0ad7bfefdc23",
+              "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
+            },
+          }
+        );
+
+        const data = response.data.response;
+        setPitStops(data);
+      } catch (error) {
+        console.error("Error fetching pit stop data:", error);
+      }
+    };
+
+    fetchPitStops();
+  }, []);
 
   return (
-    <div className="timeline-container">
-      <h2>F1 Timeline</h2>
-      <div className="timeline">
-        {f1Events.map((event, index) => (
-          <div className="event" key={index}>
-            <div className="year">{event.year}</div>
-            <div className="content">{event.event}</div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Container>
+      <h2 className="my-4">Pit Stop Timeline</h2>
+      {pitStops.map((stop, index) => (
+        <Card key={index} className="my-3">
+          <Card.Body>
+            <Row>
+              <Col>
+                <strong>Driver:</strong> {stop.driver.name}
+              </Col>
+              <Col>
+                <strong>Team:</strong> {stop.team.name}
+              </Col>
+              <Col>
+                <strong>Lap:</strong> {stop.lap}
+              </Col>
+              <Col>
+                <strong>Time:</strong> {stop.time}
+              </Col>
+              <Col>
+                <strong>Total Time:</strong> {stop.total_time}
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      ))}
+    </Container>
   );
-}
+};
 
 export default Timeline;

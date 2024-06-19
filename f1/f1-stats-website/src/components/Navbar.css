@@ -1,0 +1,13 @@
+
+.custom-nav-link {
+    background-color: black;
+    color: white !important;
+    margin-right: 5px;
+    border-radius: 70px;
+  }
+  
+  .custom-nav-link:hover {
+    background-color: darkgray;
+    color: white !important;
+  }
+  
