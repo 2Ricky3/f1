@@ -1,13 +1,43 @@
-
 .custom-nav-link {
-    background-color: black;
-    color: white !important;
-    margin-right: 5px;
-    border-radius: 70px;
-  }
-  
-  .custom-nav-link:hover {
-    background-color: darkgray;
-    color: white !important;
-  }
-  
+  background-color: #e60000; /* Vodacom red */
+  color: white !important;
+  margin-right: 5px;
+  border-radius: 50px; /* Keep buttons rounded */
+  padding: 10px 20px;
+  text-decoration: none; /* Remove underline */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.custom-nav-link:hover {
+  background-color: #cc0000; /* Darker red for hover effect */
+  color: white !important;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.4); /* Subtle shadow on hover */
+  text-decoration: none !important; /* Ensure no underline on hover */
+}
+
+.custom-nav-link:focus,
+.custom-nav-link:active {
+  text-decoration: none !important; /* No underline when focused or active */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e60000 !important;
+}
+
+.custom-navbar {
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50px; /* Rounded navbar */
+  padding: 10px 20px;
+}
+
+.navbar-toggler {
+  border-color: #e60000; /* Customize the navbar-toggler border color */
+}
+
+.navbar-toggler-icon {
+  background-color: #e60000; /* Adjust the icon background color */
+}

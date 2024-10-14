@@ -16,7 +16,6 @@ const Timeline = () => {
             params: { race: 50 }, // You can change the race number as needed
             headers: {
               "X-RapidAPI-Key": "aab88935aemshbf9715733d12537p1d684cjsn0ad7bfefdc23",
-              "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
             },
           }
         );
@@ -33,10 +32,10 @@ const Timeline = () => {
 
   return (
     <Container>
-      <h2 className="my-4">Pit Stop Timeline</h2>
+      <h2 className="text-center my-4" style={{ color: "#e60000" }}>Pit Stop Timeline</h2>
       {pitStops.map((stop, index) => (
-        <Card key={index} className="my-3">
-          <Card.Body>
+        <Card key={index} className="my-3" style={{ borderColor: "#e60000" }}>
+          <Card.Body style={{ backgroundColor: "#f8f9fa" }}>
             <Row>
               <Col>
                 <strong>Driver:</strong> {stop.driver.name}

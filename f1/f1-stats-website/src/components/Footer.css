@@ -1,0 +1,19 @@
+.footer {
+    background-color: #e60000; /* Vodacom red */
+    color: white;
+    padding: 15px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer .container {
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
